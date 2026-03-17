@@ -1,23 +1,25 @@
 ---
 name: plan-mode-research
 description: >
-  Enhances plan mode with automated research capabilities. ALWAYS load this skill when entering
-  plan mode. Whenever posing clarifying questions to the user via AskUserQuestion during plan mode,
-  always include a "Research this further" option. If selected, spawn a focused Haiku research
-  subagent to investigate the specific question — checking documentation and best practices —
-  then either proceed directly with the finding or re-pose the question with concrete options
-  surfaced by the research. Use this skill any time you are in plan mode, even for simple plans.
+  Use when posing clarifying questions to the user via AskUserQuestion during plan mode or
+  brainstorm mode. Always include a "Research this further" option unless the question is purely
+  a matter of user preference. On-demand only—never proactively spawn research. When selected,
+  a focused Haiku research subagent investigates the specific question, checking documentation
+  and best practices, then either proceeds directly with findings or re-poses with concrete options
+  surfaced by research.
 ---
 
 # Plan Mode Research
 
-When in plan mode and using `AskUserQuestion`, always include **"Research this further"** as one of the options.
+When asking clarifying questions via `AskUserQuestion` in plan mode, brainstorm mode, or any other context, always include **"Research this further"** as one of the options (unless the question is purely about user preference). Research is **on-demand only**—never spawn a research agent proactively.
 
 ## Workflow
 
 ### Step 1: Always Add the Research Option
 
-When posing any clarifying question in plan mode, include a research option whose **description is specific to the question being asked** — not a generic message. The description should tell the user exactly what will be investigated.
+When posing any clarifying question (in plan mode, brainstorm mode, or elsewhere), include a research option whose **description is specific to the question being asked** — not a generic message. The description should tell the user exactly what will be investigated.
+
+**Exception: Skip the research option if the question is purely about user preference.** For example: "Would you prefer a light or dark theme by default?" is a pure preference question. But questions about technical approaches (authentication methods, storage strategies, architecture patterns) should always include the research option.
 
 Example — if asking about authentication approach:
 ```
