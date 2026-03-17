@@ -1,0 +1,41 @@
+{
+  "skill_name": "plan-mode-research",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to add real-time features to my Node.js app — users should see live updates without refreshing the page.",
+      "expected_output": "AskUserQuestion calls that each include a 'Research this further' option with a specific, tailored description. When research is triggered, a focused Haiku subagent is spawned with clear scope constraints (4-5 searches max), tools specified (WebSearch/context7), and a structured output format requested. Research results are acted on appropriately.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Help me plan adding authentication to my React + Express app. I want users to be able to log in and stay logged in.",
+      "expected_output": "AskUserQuestion calls include 'Research this further' options. Research subagent is scoped to specific auth approaches (JWT vs sessions vs OAuth), uses appropriate tools, stays within search limits, and returns a structured finding with rationale and caveats.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I want to plan migrating my app's API layer from REST to GraphQL.",
+      "expected_output": "Research options appear on clarifying questions. If research finds competing valid approaches, the skill re-poses the question with concrete options surfaced from research rather than picking arbitrarily.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Help me plan a Python-based Monte Carlo simulation for uncertainty quantification — I need it to handle large parameter spaces efficiently.",
+      "expected_output": "Research options cover scientific computing specifics: vectorization (NumPy vs Numba vs JAX), parallelization (multiprocessing vs Dask vs Ray), RNG strategy. Research is scoped appropriately and returns a recommendation relevant to the scientific context.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I need to plan a data pipeline for processing large HDF5 datasets from a particle physics experiment — individual files are 10–50GB each.",
+      "expected_output": "Research options address domain-specific concerns: chunked I/O (h5py vs PyTables), out-of-core processing (Dask arrays vs memory mapping), and format conversion trade-offs (Zarr). Scope is kept tight given the specialized domain.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I need to plan how to share data between my SwiftUI app and its home screen widget — the widget needs to reflect the latest state from the main app.",
+      "expected_output": "Research options address App Groups + UserDefaults vs shared Core Data container vs CloudKit, and WidgetKit reload strategies. Research is appropriately scoped and accounts for platform constraints (iOS-only vs cross-platform).",
+      "files": []
+    }
+  ]
+}
